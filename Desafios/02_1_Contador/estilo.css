@@ -1,0 +1,36 @@
+body {
+    background: rgba(4, 185, 240, 0.651);
+    font: normal 15pt Liberation;
+}
+
+header {
+    color: white;
+    text-align: center;
+}
+
+section {
+    background: white;
+    margin: auto;
+    padding: 15px;
+    width: 500px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+input.num_box {
+    border: 1px solid black;
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px grey;
+    padding: 2px;
+}
+input.submit {
+    border: 1.1px solid black;
+    border-radius: 10px;
+    font-size: 12pt;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    font-style: italic;
+}

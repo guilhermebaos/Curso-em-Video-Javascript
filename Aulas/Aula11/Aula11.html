@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula11 </title>
+
+    <style>
+        body {
+            background: rgba(182, 52, 13, 0.27);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+
+    Velocidade do carro: <input type="number" name="inp_vel" id="inp_vel">
+    <input type="button" value="Verificar" onclick="calcular()">
+
+    <br><br>
+    <div id="res">
+
+    </div>
+    <script>
+        function calcular() {
+            var vel = Number(document.getElementById('inp_vel').value)
+            var limite = 120
+            var div_res = document.getElementById('res')
+
+            div_res.innerHTML = `<p>O limite de velocidade é <strong>${limite}km/h!</strong></p>`
+
+            if (vel > limite) {
+                div_res.innerHTML += '<p>Você será multado!</p>'
+            }
+            div_res.innerHTML += '<p>Use sempre o cinto de segurança!</p>'
+        }
+    </script>
+</body>
+</html>

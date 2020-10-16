@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+
+    <section>
+        <div>
+            <p>
+                Início: <input type="number" name="inp_ini" id="inp_ini">
+            </p>
+            <p>
+                Fim: <input type="number" name="inp_fim" id="inp_fim">
+            </p>
+            <p>
+                Passo: <input type="number" name="inp_pas" id="inp_pas">
+            </p>
+            <p>
+                <input type="button" value="Contar" onclick="contar()">
+            </p>
+        </div>
+        <div id="res">
+            Aguardando a confirmação dos dados...
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Guilherme Silva</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

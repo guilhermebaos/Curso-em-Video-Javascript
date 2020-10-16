@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background: rgba(182, 52, 13, 0.27);
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem Vindo a Portugal!</h1>
+
+    País onde nasceu: <input type="text" name="inp_nac" id="inp_nac">
+    <input type="button" value="Submeter" onclick="nacionalidade()">
+
+    <br><br>
+    <div id="res">
+
+    </div>
+    <script>
+        function nacionalidade() {
+            var nac = document.getElementById('inp_nac').value
+            var div_res = document.getElementById('res')
+
+            div_res.innerHTML = `Como nasceu no país: <strong>${nac}</strong>, tem de fazer o seguinte: <br><br>`
+
+            nac = nac.toUpperCase()
+            if (nac == 'PORTUGAL') {
+                div_res.innerHTML += 'Dirija-se para o posto onde diz: Portugueses<br>'
+            } else {
+                div_res.innerHTML += 'Dirija-se para o posto onde diz: Estrangeiros<br>'
+            }
+
+            div_res.innerHTML += 'Obrigado pela sua colaboração!'
+            
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula 10 -> Eventos DOM</title>
+
+    <style>
+        div#Area {
+            background: lightgray;
+            width: 400px;
+            height: 400px;
+            font: bold 18pt Calibri;
+            color: black;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Area">
+        Interaja!
+    </div>
+
+    <script>
+        var div_area = document.getElementById('Area')
+        div_area.addEventListener('click', clicar)
+        div_area.addEventListener('mouseenter', entrar)
+        div_area.addEventListener('mouseout', sair)
+
+        function clicar(){
+            div_area.style.background = 'black'
+            div_area.style.color = 'white'
+            div_area.innerText = 'Clicou!'
+        }
+
+        function entrar() {
+            div_area.style.background = 'grey'
+            div_area.innerText = 'Entrou!'
+        }
+
+        function sair() {
+            div_area.style.background = 'lightgrey'
+            div_area.innerText = 'Saiu!'
+        }
+    </script>
+</body>
+</html>

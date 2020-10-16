@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de números</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Analisador de Números</h1>
+    </header>
+
+    <section>
+        <div id="main">
+            <p>
+                <label for="inp_num">Número de 1 a 1000:</label>
+                <input type="number" name="inp_num" id="inp_num">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </p>
+        </div><br>
+        <div id="resp">
+            <select name="valores" id="valores" size="6">
+
+            </select><br>
+            <input class="analisar" type="button" value="Analisar" onclick="analisar()">
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Guilherme Silva</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

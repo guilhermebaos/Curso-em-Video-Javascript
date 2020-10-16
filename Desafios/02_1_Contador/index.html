@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Contador</h1>
+    </header>
+
+    <section>
+        <div id="inputs">
+            <table>
+                <tr>
+                    <td>
+                        <label for="inp_ini">Ínicio: </label>
+                    </td>
+                    <td>
+                        <input class="num_box" type="number" name="inp_ini" id="inp_ini">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="inp_fim">Fim: </label>
+                    </td>
+                    <td>
+                        <input class="num_box" type="number" name="inp_fim" id="inp_fim">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="inp_inc">Incremento: </label>
+                    </td>
+                    <td>
+                        <input class="num_box" type="number" name="inp_inc" id="inp_inc">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input class="submit" type="button" value="Contar!" onclick="contar()">
+            <br><br>
+        </div>
+        <div id="resp">
+            <p>Preparando para contar...</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; Guilherme Silva</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

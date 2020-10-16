@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A sua idade em imagens!</title>
+
+    <style>
+        body {
+            background: lightblue;
+            font: normal 20pt Calibri;
+        }
+
+        div.main {
+            background: white;
+            width: 60vw;
+            max-width: 600px;
+            height: 50vh;
+            position: relative;
+            margin: auto;
+            margin-top: 5vh;
+            padding: 30px;
+            border-radius: 15px;
+        }
+        div.response {
+            text-align: center;
+        }
+
+        img.img_resp {
+            border-radius: 10px;
+        }
+
+        h1.tit {
+            text-align: center;
+        }
+
+        input.inp_ano {
+            border-radius: 4px;
+        }
+        input.submeter {
+            font: normal 16pt Calibri;
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="tit" id="tit">Idade para imagem</h1>
+    <div class="main" id="main">
+        <table>
+            <tr> 
+                <td>Ano de Nascimento: </td>
+                <td> <input class="inp_ano" type="number" name="inp_ano" id="inp_ano"> </td>
+            </tr>
+            <tr>
+                <td>Sexo:</td>
+                <td>
+                    <input type="radio" name="gender" id="inp_masc" value="M"> <label for="inp_masc">Masculino</label>
+                    <input type="radio" name="gender" id="inp_fem" value="F"> <label for="inp_fem">Feminino</label>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <input class='submeter' type="button" name="submit" id="submit" value="Submeter" onclick="validar()">
+
+        <br>
+        <div class="response" id="response">
+            <p class="text_resp" id="text_resp"></p>
+        </div>
+    </div>
+
+    <script>
+        var div_resp = document.getElementById('response')
+        var nasc_ano = document.getElementById('inp_ano')
+        var masc = document.getElementById('inp_masc')
+        var fem = document.getElementById('inp_fem')
+        var n = 0
+
+        
+        
+        function validar() {
+            if (n == 0) {
+                div_resp.innerHTML += '<img src="" alt="Foto" class="img_resp" id="img_resp" height="220">'
+                var img_resp = document.getElementById('img_resp')
+                var p_resp = document.getElementById('text_resp')
+                n += 1
+            } else {
+                var img_resp = document.getElementById('img_resp')
+                var p_resp = document.getElementById('text_resp')
+            }
+
+            // var sexo = (masc.checked==true ? 'um Homem' : 'uma Mulher')
+            var ano_agora = new Date()
+            ano = Number(nasc_ano.value)
+            var idade = ano_agora.getFullYear() - ano
+
+            if (masc.checked) {
+                var sexo = 'um Homem'
+                img_resp.src = 'homem_'
+            } else if (fem.checked) {
+                var sexo = 'uma Mulher'
+                img_resp.src = 'mulher_'
+            } else {
+                var sexo = 'não-binário'
+                img_resp.src = 'nonbinary.jpg'
+            }
+            
+            if (idade < 123 && idade >= 0) {
+                p_resp.innerHTML = `É ${sexo} com ${idade} anos de idade!`
+                if (sexo != 'não-binário') {
+                    if (idade < 10) {
+                        img_resp.src += 'cria.jpg'
+                    } else if (idade < 19) {
+                        img_resp.src += 'adol.jpg'
+                    } else if (idade < 50) {
+                        img_resp.src += 'cres.jpg'
+                    } else {
+                        img_resp.src += 'velh.jpg'
+                    }
+                }
+                
+            } else {
+                p_resp.innerHTML = `Enganou-se no seu ano de Nascimento!`
+            }
+
+
+        }
+    </script>
+</body>
+</html>

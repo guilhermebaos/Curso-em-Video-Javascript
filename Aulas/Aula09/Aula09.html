@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Aula09 -> DOM </title>
+    <style>
+        body {
+            background: rgba(178, 208, 226, 0.678);
+            font-size: 16pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Começando os Estudos com o DOM</h1><br>
+
+    <p>Resultado: </p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript</p>
+
+    <script> // Quando usamos document.comando podemos usar window.document.comando
+        document.write('URL: &nbsp' + document.URL + '<br><br>')
+
+        var p1 = document.getElementsByTagName('p')[1] // Selecionar o 1º parágrafo <p>
+        document.write(`O parágrafo tem estas palavras: ${p1.innerText}<br>`)
+        document.write(`E está escrito assim: ${p1.innerHTML}<br>`)
+
+        var corpo = window.document.body
+        // corpo.style.background = 'rgb(200, 200, 200)'
+    </script>
+
+
+    <br><h2>Segunda parte: </h2>
+
+    <p id='Importante'>Hoje está Sol</p>
+    <p class='Red'>Isto é <strong>Vermelho</strong></p>
+    <p name='José'>Este parágrafo chama-se José</p>
+
+    <script>
+        var imp_p = document.getElementById('Importante')
+        imp_p.style.font = 'normal 18pt Arial' // Não dá para usar font-size por causa do -
+
+        var red_p = document.getElementsByClassName('Red')[0]
+        red_p.style.color = 'Red'
+
+        var jose_p = document.getElementsByName('José')[0]
+        jose_p.style.font = 'normal 15pt "Comic Sans MS"'
+        
+    </script>
+
+    <br><br><br><br>
+    <p>Fim da página</p>
+</body>
+</html>

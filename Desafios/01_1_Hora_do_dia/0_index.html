@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hora do Dia</title>
+
+    <style>
+        body {
+            background: rgba(15, 8, 1, 0.849);
+            font: normal 22pt Calibri;
+        }
+        
+        div.main {
+            background: white;
+            width: 60vw;
+            max-width: 600px;
+            height: 50vh;
+            position: relative;
+            margin: auto;
+            margin-top: 5vh;
+            border-radius: 15px;
+        }
+
+        h1.hora {
+            text-align: center;
+        }
+
+        img.sol {
+            display: block;
+            margin: auto;
+            max-width: 90%;
+            max-height: 70%;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body id='body'>
+    <div class="main" id="main">
+        <h1 class='hora' id="hora"></h1>
+        <img src="" alt="Imagem do Sol" class="sol" id="sol">
+    </div>
+
+    <script>
+        // Selecionar elementos
+        var body = document.getElementById('body')
+        var h1_hora = document.getElementById('hora')
+        var img_sol = document.getElementById('sol')
+
+        // Saber as horas
+        var date_hora = new Date().getHours()
+        // date_hora = 13
+        var date_min = new Date().getMinutes()
+
+        // Corrigir os minutos (0 antecedente)
+        if (String(date_min).length == 1) {
+            date_min = '0' + date_min
+        }
+        
+        // Mudar o HTML de acordo com a hora
+        if (date_hora < 0){
+            body.style.background = 'lightgrey'
+            h1_hora.innerHTML = `Hora inválida!`
+            img_sol.src = 'erro.jpg'
+        } else if (date_hora < 12) {
+            body.style.background = 'rgba(209, 191, 111, 0.77)'
+            h1_hora.innerHTML = `Agora são ${date_hora}:${date_min}`
+            img_sol.src = 'manha.jpg'
+        } else if (date_hora < 19) {
+            body.style.background = 'rgba(209, 103, 3, 0.77)'
+            h1_hora.innerHTML = `Agora são ${date_hora}:${date_min}`
+            img_sol.src = 'tarde.jpg'
+        } else if (date_hora <= 24) {
+            body.style.background = 'rgba(10, 4, 1, 0.849)'
+            h1_hora.innerHTML = `Agora são ${date_hora}:${date_min}`
+            img_sol.src = 'noite.jpg'
+        } else {
+            body.style.background = 'rgba(209, 191, 111, 0.767)'
+            h1_hora.innerHTML = `Hora inválida!`
+            img_sol.src = 'erro.jpg'
+        }
+    </script>
+</body>
+</html>
